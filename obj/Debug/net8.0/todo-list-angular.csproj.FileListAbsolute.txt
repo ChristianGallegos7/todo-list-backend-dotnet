@@ -1,0 +1,7 @@
+C:\Users\chris\source\repos\todo-list-angular\obj\Debug\net8.0\todo-list-angular.csproj.AssemblyReference.cache
+C:\Users\chris\source\repos\todo-list-angular\obj\Debug\net8.0\todo-list-angular.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\source\repos\todo-list-angular\obj\Debug\net8.0\todo-list-angular.AssemblyInfoInputs.cache
+C:\Users\chris\source\repos\todo-list-angular\obj\Debug\net8.0\todo-list-angular.AssemblyInfo.cs
+C:\Users\chris\source\repos\todo-list-angular\obj\Debug\net8.0\todo-list-angular.csproj.CoreCompileInputs.cache
+C:\Users\chris\source\repos\todo-list-angular\obj\Debug\net8.0\todo-list-angular.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\chris\source\repos\todo-list-angular\obj\Debug\net8.0\todo-list-angular.MvcApplicationPartsAssemblyInfo.cache
