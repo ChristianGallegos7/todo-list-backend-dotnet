@@ -1,4 +1,5 @@
-﻿using todo_list_angular.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using todo_list_angular.Models;
 
 namespace todo_list_angular.Repository.Impl
 {
@@ -12,29 +13,41 @@ namespace todo_list_angular.Repository.Impl
             _contexto = contexto;
         }
 
-        public Task Add(TodoItem item)
+        public async Task Add(TodoItem item)
         {
-            throw new NotImplementedException();
+            _contexto.TodoItems.Add(item);
+            await _contexto.SaveChangesAsync();
         }
 
-        public Task Delete(int id)
+
+        public async Task<IEnumerable<TodoItem>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _contexto.TodoItems.ToListAsync();
         }
 
-        public Task<IEnumerable<TodoItem>> GetAll()
+        public async Task<TodoItem> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _contexto.TodoItems.FindAsync(id);
         }
 
-        public Task<TodoItem> GetById(int id)
+        public async Task<bool> Update(TodoItem item)
         {
-            throw new NotImplementedException();
+            _contexto.Entry(item).State = EntityState.Modified;
+            return await _contexto.SaveChangesAsync() > 0 ;
         }
 
-        public Task Update(TodoItem item)
+        public async Task<bool> Delete(int id)
         {
-            throw new NotImplementedException();
+            var todoItem = await _contexto.TodoItems.FindAsync(id);
+
+            if(todoItem != null)
+            {
+                _contexto.TodoItems.Remove(todoItem);
+
+               return await _contexto.SaveChangesAsync() > 0;
+            }
+
+            return false;
         }
     }
 }

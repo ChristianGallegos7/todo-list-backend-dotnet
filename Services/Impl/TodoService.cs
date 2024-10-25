@@ -1,33 +1,97 @@
 ﻿using todo_list_angular.DTOs.TodoItem;
+using todo_list_angular.Models;
+using todo_list_angular.Repository;
 
 namespace todo_list_angular.Services.Impl
 {
     public class TodoService : ITodoService
     {
 
-        public Task<IEnumerable<TodoItemDto>> GetAll()
+        private readonly ITodoItemRepository _todoItemRepository;
+
+        public TodoService(ITodoItemRepository todoItemRepository)
         {
-            throw new NotImplementedException();
+            _todoItemRepository = todoItemRepository;
         }
 
-        public Task<TodoItemDto> Add(TodoItemInsertDto todoItemInsertDto)
+        public async Task<IEnumerable<TodoItemDto>> GetAll()
         {
-            throw new NotImplementedException();
+            var todos = await _todoItemRepository.GetAll();
+
+            return todos.Select(t => new TodoItemDto
+            {
+                Id = t.Id,
+                Title = t.Title,
+                IsCompleted = t.IsCompleted
+            });
         }
 
-        public Task<TodoItemDto> DeleteById(int id)
+        public async Task<TodoItemDto> Add(TodoItemInsertDto todoItemInsertDto)
         {
-            throw new NotImplementedException();
+            var todo = new TodoItem
+            {
+                Title = todoItemInsertDto.Title,
+                IsCompleted = todoItemInsertDto.IsCompleted
+            };
+
+            await _todoItemRepository.Add(todo);
+
+            return new TodoItemDto
+            {
+                Id = todo.Id,
+                Title = todo.Title,
+                IsCompleted = todo.IsCompleted
+            };
         }
 
-        public Task<TodoItemDto> GetById(int id)
+        public async Task<TodoItemDto> DeleteById(int id)
         {
-            throw new NotImplementedException();
+            var todo = await _todoItemRepository.GetById(id);
+
+            if (todo == null) return null;
+
+            await _todoItemRepository.Delete(id);
+
+            return new TodoItemDto
+            {
+                Id = todo.Id,
+                Title = todo.Title,
+                IsCompleted = todo.IsCompleted
+            };
         }
 
-        public Task<TodoItemDto> Update(int id, TodoItemUpdateDto todoItemUpdateDto)
+        public async Task<TodoItemDto> GetById(int id)
         {
-            throw new NotImplementedException();
+            var todo = await _todoItemRepository.GetById(id);
+
+            if (todo == null) return null;
+
+            return new TodoItemDto
+            {
+                Id = todo.Id,
+                Title = todo.Title,
+                IsCompleted = todo.IsCompleted
+            };
+        }
+
+        public async Task<TodoItemDto> Update(int id, TodoItemUpdateDto todoItemUpdateDto)
+        {
+            var todo = await _todoItemRepository.GetById(id);
+
+            if (todo == null) return null;
+
+            todo.Title = todoItemUpdateDto.Title;
+            todo.IsCompleted = todoItemUpdateDto.IsCompleted;
+
+            await _todoItemRepository.Update(todo);
+
+            return new TodoItemDto
+            {
+                Id = todo.Id,
+                Title = todo.Title,
+                IsCompleted = todo.IsCompleted
+            };
+
         }
     }
 }
