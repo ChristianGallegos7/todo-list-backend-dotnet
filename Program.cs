@@ -1,40 +1,40 @@
-using Microsoft.EntityFrameworkCore;
-using todo_list_angular.Models;
-using todo_list_angular.Repository;
-using todo_list_angular.Repository.Impl;
-using todo_list_angular.Services;
-using todo_list_angular.Services.Impl;
+    using Microsoft.EntityFrameworkCore;
+    using todo_list_angular.Models;
+    using todo_list_angular.Repository;
+    using todo_list_angular.Repository.Impl;
+    using todo_list_angular.Services;
+    using todo_list_angular.Services.Impl;
 
-var builder = WebApplication.CreateBuilder(args);
+    var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddScoped<ITodoService, TodoService>();
-builder.Services.AddScoped<ITodoItemRepository, TodoItemRepository>();
+    // Add services to the container.
+    builder.Services.AddScoped<ITodoService, TodoService>();
+    builder.Services.AddScoped<ITodoItemRepository, TodoItemRepository>();
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-
-//Database Sql Server
-builder.Services.AddDbContext<DbContexto>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("conexion"));
-});
+    builder.Services.AddControllers();
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
 
 
-var app = builder.Build();
+    //Database Sql Server
+    builder.Services.AddDbContext<DbContexto>(options =>
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("conexion"));
+    });
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
-app.UseAuthorization();
+    var app = builder.Build();
 
-app.MapControllers();
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 
-app.Run();
+    app.UseAuthorization();
+
+    app.MapControllers();
+
+    app.Run();

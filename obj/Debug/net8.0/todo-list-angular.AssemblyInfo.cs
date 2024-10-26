@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("todo-list-angular")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca3ede877cd0bd4986d01abf92909c07075849e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+916d3e9533f2b648e22f1cd7ecb5bab212d61f5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("todo-list-angular")]
 [assembly: System.Reflection.AssemblyTitleAttribute("todo-list-angular")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
