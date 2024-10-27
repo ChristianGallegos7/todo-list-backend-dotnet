@@ -1,0 +1,6 @@
+@todo_list_angular_HostAddress = http://localhost:5225
+
+GET {{todo_list_angular_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
