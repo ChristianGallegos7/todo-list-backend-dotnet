@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver-container
+    environment:
+      - ACCEPT_EULA=Y  # Aceptar la licencia
+      - MSSQL_SA_PASSWORD=YourStrong@Passw0rd  # Cambia esto por una contraseña segura
+      - MSSQL_PID=Express  # Usando la versión Express (puede ser Developer o Evaluation también)
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql  # Persiste los datos de la base de datos
+
+volumes:
+  sql_data:

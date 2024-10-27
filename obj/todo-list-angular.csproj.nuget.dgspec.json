@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\source\\repos\\todo-list-angular\\todo-list-angular.csproj": {}
+    "C:\\Users\\Christian7\\Desktop\\WorkSpace\\todo-list-backend-dotnet\\todo-list-angular.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\source\\repos\\todo-list-angular\\todo-list-angular.csproj": {
+    "C:\\Users\\Christian7\\Desktop\\WorkSpace\\todo-list-backend-dotnet\\todo-list-angular.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\source\\repos\\todo-list-angular\\todo-list-angular.csproj",
+        "projectUniqueName": "C:\\Users\\Christian7\\Desktop\\WorkSpace\\todo-list-backend-dotnet\\todo-list-angular.csproj",
         "projectName": "todo-list-angular",
-        "projectPath": "C:\\Users\\chris\\source\\repos\\todo-list-angular\\todo-list-angular.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\source\\repos\\todo-list-angular\\obj\\",
+        "projectPath": "C:\\Users\\Christian7\\Desktop\\WorkSpace\\todo-list-backend-dotnet\\todo-list-angular.csproj",
+        "packagesPath": "C:\\Users\\Christian7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Christian7\\Desktop\\WorkSpace\\todo-list-backend-dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Christian7\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
