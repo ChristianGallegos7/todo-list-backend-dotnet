@@ -6,7 +6,7 @@ using todo_list_angular.Services;
 using todo_list_angular.Services.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.UseUrls("http://localhost:5050", "https://localhost:5051");
 // Add services to the container.
 builder.Services.AddScoped<ITodoService, TodoService>();
 builder.Services.AddScoped<ITodoItemRepository, TodoItemRepository>();

@@ -11,8 +11,8 @@ using todo_list_angular.Models;
 namespace todo_list_angular.Migrations
 {
     [DbContext(typeof(DbContexto))]
-    [Migration("20241026032155_Initial")]
-    partial class Initial
+    [Migration("20241027063701_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
